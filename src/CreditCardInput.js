@@ -122,7 +122,7 @@ export default class CreditCardInput extends Component {
     } = this.props;
 
     return {
-      inputStyle: [s.input, inputStyle, additionalInputStyles[field]],
+      inputStyle: [s.input, inputStyle],
       labelStyle: [s.inputLabel, labelStyle],
       validColor, invalidColor, placeholderColor,
       ref: field, field,
@@ -143,7 +143,7 @@ export default class CreditCardInput extends Component {
       cardImageFront, cardImageBack, inputContainerStyle,
       values: { number, expiry, cvc, name, type }, focused,
       allowScroll, requiresName, requiresCVC, requiresPostalCode,
-      cardScale, cardFontFamily, cardBrandIcons,
+      cardScale, cardFontFamily, cardBrandIcons, additionalInputStyles
     } = this.props;
 
     return (
@@ -166,12 +166,12 @@ export default class CreditCardInput extends Component {
             showsHorizontalScrollIndicator={false}
             style={s.form}>
           <CCInput {...this._inputProps("number")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['number'], { width: CARD_NUMBER_INPUT_WIDTH }]} />
           <CCInput {...this._inputProps("expiry")}
-              containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]} />
+              containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['expiry'], { width: EXPIRY_INPUT_WIDTH }]} />
           { requiresCVC &&
             <CCInput {...this._inputProps("cvc")}
-                containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['cvc'], { width: CVC_INPUT_WIDTH }]} /> }
           { requiresName &&
             <CCInput {...this._inputProps("name")}
                 keyboardType="default"
