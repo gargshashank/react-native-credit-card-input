@@ -90,6 +90,7 @@ export default class CreditCardInput extends Component {
     placeholderColor: "gray",
     allowScroll: false,
     additionalInputsProps: {},
+    additionalInputStyles: {}
   };
 
   componentDidMount = () => this._focus(this.props.focused);
