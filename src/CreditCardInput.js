@@ -117,11 +117,11 @@ export default class CreditCardInput extends Component {
       inputStyle, labelStyle, validColor, invalidColor, placeholderColor,
       placeholders, labels, values, status,
       onFocus, onChange, onBecomeEmpty, onBecomeValid,
-      additionalInputsProps,
+      additionalInputsProps, additionalInputStyles
     } = this.props;
 
     return {
-      inputStyle: [s.input, inputStyle],
+      inputStyle: [s.input, inputStyle, additionalInputStyles[field]],
       labelStyle: [s.inputLabel, labelStyle],
       validColor, invalidColor, placeholderColor,
       ref: field, field,
