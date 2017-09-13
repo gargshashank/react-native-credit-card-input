@@ -175,7 +175,7 @@ export default class CreditCardInput extends Component {
           { requiresName &&
             <CCInput {...this._inputProps("name")}
                 keyboardType="default"
-                containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['cvc'], { width: NAME_INPUT_WIDTH }]} /> }
+                containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['name'], { width: NAME_INPUT_WIDTH }]} /> }
           { requiresPostalCode &&
             <CCInput {...this._inputProps("postalCode")}
                 containerStyle={[s.inputContainer, inputContainerStyle, additionalInputStyles['postalCode'], { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
